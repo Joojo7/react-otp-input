@@ -243,7 +243,7 @@ class OtpInput extends Component {
   handleOnKeyDown = (e) => {
     if (e.keyCode === BACKSPACE || e.key === 'Backspace') {
       e.preventDefault();
-      this.changeCodeAtFocus('');
+      this.changeCodeBehindFocus('');
       this.focusPrevInput();
     } else if (e.keyCode === DELETE || e.key === 'Delete') {
       e.preventDefault();
