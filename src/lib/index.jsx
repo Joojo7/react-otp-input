@@ -186,6 +186,17 @@ class OtpInput extends Component {
     this.handleOtpChange(otp);
   };
 
+  changeCodeBehindFocus = (value) => {
+    const { activeInput } = this.state;
+    const otp = this.getOtpValue();
+    if (typeof otp[activeInput] === 'string') {
+      otp[activeInput] = value[0];
+    } else {
+      otp[activeInput - 1] = value[0];
+    }
+    this.handleOtpChange(otp);
+  };
+
   // Handle pasted OTP
   handleOnPaste = (e) => {
     e.preventDefault();
