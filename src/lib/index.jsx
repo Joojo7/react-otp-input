@@ -193,6 +193,7 @@ class OtpInput extends Component {
       otp[activeInput] = value[0];
     } else {
       otp[activeInput - 1] = value[0];
+      this.focusPrevInput();
     }
     this.handleOtpChange(otp);
   };
@@ -244,7 +245,6 @@ class OtpInput extends Component {
     if (e.keyCode === BACKSPACE || e.key === 'Backspace') {
       e.preventDefault();
       this.changeCodeBehindFocus('');
-      this.focusPrevInput();
     } else if (e.keyCode === DELETE || e.key === 'Delete') {
       e.preventDefault();
       this.changeCodeAtFocus('');
